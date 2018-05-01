@@ -7,11 +7,11 @@ class Item
 
   attr_writer :price
 
-  def initialize(type,color,price,brand)
-    @type = type
-    @color = color
-    @price = price
-    @brand = brand
+  def initialize(input_options)
+    @type = input_options[:type]
+    @color = input_options[:color]
+    @price = input_options[:price]
+    @brand = input_options[:brand]
   end
 
   # def type
@@ -35,7 +35,13 @@ class Item
   # end
 end
 
-hammer = Item.new("hammer","blue",30,"X Company")
+hammer = Item.new(
+                  type: "hammer",
+                  color: "blue",
+                  price: 30,
+                  brand: "X Company"
+                  )
+
 puts hammer.color
 puts hammer.price
 puts hammer.brand
